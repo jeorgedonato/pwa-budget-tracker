@@ -7,10 +7,11 @@ const FILES_TO_CACHE = [
   "https://use.fontawesome.com/releases/v5.8.2/css/all.css",
   "https://cdn.jsdelivr.net/npm/chart.js@2.8.0",
   "/index.js",
-  "/style.css",
+  "/styles.css",
   '/manifest.webmanifest',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png',
+  "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 ];
 
 
@@ -57,7 +58,7 @@ self.addEventListener("fetch", event => {
   }
 
   // handle runtime GET requests for data from /api routes
-  if (event.request.url.includes("/api/images")) {
+  if (event.request.url.includes("/api/transaction")) {
     // make network request and fallback to cache if network request fails (offline)
     event.respondWith(
       caches.open(RUNTIME_CACHE).then(cache => {
